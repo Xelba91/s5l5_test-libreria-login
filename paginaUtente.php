@@ -103,7 +103,7 @@ foreach ($booksData as $bookData) {
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -120,7 +120,7 @@ foreach ($booksData as $bookData) {
 <body>
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Pagina utente</a>
+            <a class="navbar-brand" href="#">Utente <?php echo htmlspecialchars($_SESSION['nomeutente']); ?></a>
             <a href="logout.php" class="btn btn-outline-success">Logout</a>
         </div>
     </nav>
