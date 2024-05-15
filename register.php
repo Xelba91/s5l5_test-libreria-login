@@ -135,13 +135,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
         <script>
-        // Aggiungi una funzione per far sparire il messaggio di errore dopo 1 secondo
-        setTimeout(function() {
-            var errorMessage = document.querySelector('.alert');
-            if (errorMessage) {
-                errorMessage.remove();
-            }
-        }, 1000); // 1000 millisecondi = 1 secondo
+        // Controlla se la variabile di sessione 'error' è stata impostata
+        <?php if(isset($_SESSION['error'])): ?>
+            // Imposta un ritardo di un secondo prima di rimuovere la variabile di sessione
+            setTimeout(function() {
+                <?php unset($_SESSION['error']); ?>
+            }, 1000);
+        <?php endif; ?>
     </script>
 </body>
 
