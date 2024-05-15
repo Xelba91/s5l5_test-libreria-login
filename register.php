@@ -127,7 +127,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="mt-3">Hai già un account? <a href="index.php">Accedi</a></div>
     </main>
     <footer class="footer border-top border-white text-center text-white mt-5">
-    <p className="m-0 py-3">&copy; 2024 Xelba Libreria</p>
+    <a class="text-decoration-none" href="https://github.com/Xelba91/s5l5_test-libreria-login" target="_blank"> &copy; 2024 Xelba Libreria</a>
 
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
