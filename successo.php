@@ -8,8 +8,8 @@
     <style>
     body {
         background-image: url('https://www.potterandmore.com/images/mondo_magico/luoghi/hogwarts/biblioteca.jpg');
-        background-size: cover; /* per coprire l'intera pagina con l'immagine */
-        background-repeat: no-repeat; /* per evitare che l'immagine si ripeta */
+        background-size: cover; 
+        background-repeat: no-repeat; 
     }
 </style>
 </head>

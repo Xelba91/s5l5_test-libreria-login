@@ -14,15 +14,14 @@ $mysqli = new mysqli(
 
 if($mysqli->connect_error) { die($mysqli->connect_error); } 
 
-// Creo il database
 $sql = 'CREATE DATABASE IF NOT EXISTS ' . $db;
 if(!$mysqli->query($sql)) { die($mysqli->connect_error); }
 
-// Seleziono il Database
+
 $sql = 'USE ' . $db;
 $mysqli->query($sql);
 
-// creo la tabella
+
 
 $sql = 'CREATE TABLE IF NOT EXISTS users ( 
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -32,12 +31,12 @@ $sql = 'CREATE TABLE IF NOT EXISTS users (
 )';
 if(!$mysqli->query($sql)) { die($mysqli->connect_error); }
 
-// Leggo dati da una tabella
+
 $sql = 'SELECT * FROM users;';
 $res = $mysqli->query($sql);
 if($res->num_rows === 0) { 
     $password = password_hash('password', PASSWORD_DEFAULT);
-    // Inserisco dati in una tabella
+    
     $sql = 'INSERT INTO users (nomeutente, password, ruolo) 
         VALUES ("admin", "'.$password.'", "admin");';
     if(!$mysqli->query($sql)) { echo($mysqli->connect_error); }

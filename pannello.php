@@ -84,8 +84,8 @@ if(isset($_GET['action']) && $_GET['action'] == 'edit' && isset($_GET['id'])) {
   <style>
   body {
         background-image: url('https://www.potterandmore.com/images/mondo_magico/luoghi/hogwarts/biblioteca.jpg');
-        background-size: cover; /* per coprire l'intera pagina con l'immagine */
-        background-repeat: no-repeat; /* per evitare che l'immagine si ripeta */
+        background-size: cover;
+        background-repeat: no-repeat; 
     }
     </style>
 </head>
@@ -131,7 +131,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'edit' && isset($_GET['id'])) {
     </table>
   </div>
 
-  <!-- Modale di aggiunta utenti -->
+
   <div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -166,7 +166,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'edit' && isset($_GET['id'])) {
     </div>
   </div>
 
-  <!-- Modali di modifica utenti -->
+
   <?php foreach ($res as $user) : ?>
     <div class="modal fade" id="editUser<?= $user['id'] ?>" tabindex="-1" aria-labelledby="editUser<?= $user['id'] ?>" aria-hidden="true">
       <div class="modal-dialog">

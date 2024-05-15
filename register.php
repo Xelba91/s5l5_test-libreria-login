@@ -10,7 +10,7 @@ $config = require_once('config.php');
 
 use DB\DB_PDO as DB;
 
-//mi connetto al database
+
 $PDOConn = DB::getInstance($config); 
 $conn = $PDOConn->getConnection();
 
@@ -25,17 +25,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    // Hash della password
+  
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    // Inserisci l'utente nel database
+ 
     try {
         $stmt = $conn->prepare("INSERT INTO users (nomeutente, password) VALUES (:nomeutente, :password)");
         $stmt->bindParam(':nomeutente', $nomeutente);
         $stmt->bindParam(':password', $hashedPassword);
         $stmt->execute();
         
-        // Reindirizza alla pagina di successo o alla home page
         header("Location: successo.php");
         exit();
     } catch (PDOException $e) {

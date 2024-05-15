@@ -9,15 +9,15 @@ $config = require_once('config.php');
 
 use DB\DB_PDO as DB;
 
-//mi connetto al database
+
 $PDOConn = DB::getInstance($config); 
 $conn = $PDOConn->getConnection();
-// verifica se l'utente ha gia effettuato l'accesso
+
 if (isset($_SESSION['session_id'])) {
     header('Location: pannello.php');
     exit;
 }
-// controllo utente nel database
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['nomeutente'];
     $password = $_POST['password'];
@@ -28,13 +28,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($user && password_verify($password, $user['password']) && $user['ruolo'] === 'admin') {
         $_SESSION['session_id'] = $user['id'];
         $_SESSION['nomeutente'] = $user['nomeutente'];
-        $_SESSION['ruolo'] = $user['ruolo']; // memorizza il ruolo dell'utente in sessione
+        $_SESSION['ruolo'] = $user['ruolo']; 
         header('Location: pannello.php');
         exit;
     } elseif ($user && password_verify($password, $user['password']) && $user['ruolo'] === 'utente') {
         $_SESSION['session_id'] = $user['id'];
         $_SESSION['nomeutente'] = $user['nomeutente'];
-        $_SESSION['ruolo'] = $user['ruolo']; // memorizza il ruolo dell'utente in sessione
+        $_SESSION['ruolo'] = $user['ruolo']; 
         header('Location: paginaUtente.php');
         exit;
     }
@@ -143,9 +143,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     </footer>
     <script>
-        // Controlla se la variabile di sessione 'error' è stata impostata
+     
         <?php if(isset($_SESSION['error'])): ?>
-            // Imposta un ritardo di un secondo prima di rimuovere la variabile di sessione
+      
             setTimeout(function() {
                 <?php unset($_SESSION['error']); ?>
             }, 1000);
