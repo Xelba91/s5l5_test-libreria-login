@@ -12,7 +12,6 @@ class Book {
         $this->imageUrl = $imageUrl;
     }
 
-    // Getters
     public function getId() {
         return $this->id;
     }
@@ -29,7 +28,6 @@ class Book {
         return $this->imageUrl;
     }
 
-    // Setters
     public function setTitle($title) {
         $this->title = $title;
     }
