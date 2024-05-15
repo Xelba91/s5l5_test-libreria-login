@@ -57,8 +57,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
-    <meta name="generator" content="Hugo 0.122.0" />
     <title>Registrati</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/" />
@@ -70,8 +68,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <meta name="theme-color" content="#712cf9" />
 
-    <link rel="stylesheet" href="css/style.css" />
     <link href="https://getbootstrap.com/docs/5.3/examples/sign-in/sign-in.css" rel="stylesheet" />
+
+    <style>
+    body {
+            background-image: url('https://www.potterandmore.com/images/mondo_magico/luoghi/hogwarts/biblioteca.jpg');
+            background-size: cover; 
+            background-repeat: no-repeat;
+        }
+        main {
+            background-color: rgba(33, 37, 41, 0.8);
+            border-radius: 10px;
+            
+        }
+        footer {
+        background-color: rgba(33, 37, 41, 0.8);
+        border-radius: 10px;
+        position: fixed;
+        bottom: 20px; 
+        left: 50%; 
+        transform: translateX(-50%); 
+        padding: 10px; 
+        
+    }
+</style>
 </head>
 
 <body class="d-flex align-items-center py-4 bg-body-tertiary">
@@ -80,12 +100,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h1 class="h3 mb-3 fw-normal text-center">REGISTRAZIONE</h1>
 
             <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Nome utente" name="nomeutente"
+                <input required type="text" class="form-control" id="floatingInput" placeholder="Nome utente" name="nomeutente"
                     value="" />
                 <label for="floatingInput">Nome utente</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password"
+                <input required type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password"
                     value="" />
                 <label for="floatingPassword">Password</label>
             </div>
@@ -107,9 +127,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
         <div class="mt-3">Hai già un account? <a href="index.php">Accedi</a></div>
     </main>
+    <footer class="footer border-top border-white text-center text-white mt-5">
+    <p className="m-0 py-3">&copy; 2024 Xelba Libreria</p>
+
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+        <script>
+        // Aggiungi una funzione per far sparire il messaggio di errore dopo 1 secondo
+        setTimeout(function() {
+            var errorMessage = document.querySelector('.alert');
+            if (errorMessage) {
+                errorMessage.remove();
+            }
+        }, 1000); // 1000 millisecondi = 1 secondo
+    </script>
 </body>
 
 </html>

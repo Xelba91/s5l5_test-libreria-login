@@ -42,6 +42,6 @@ if($res->num_rows === 0) {
         VALUES ("admin", "'.$password.'", "admin");';
     if(!$mysqli->query($sql)) { echo($mysqli->connect_error); }
     else { 
-        echo '<h6 class="message">Database creato e aggiunto utente admin.<br>Per accedere come admin utilizzare le credenziali:<br> admin <br>    password</h6>';
+        echo '<h5 class="message">Database creato e aggiunto utente admin.<br>Per accedere come admin utilizzare le credenziali:<br> admin <br>    password</h5>';
     }
 }

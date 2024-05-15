@@ -111,10 +111,16 @@ foreach ($booksData as $bookData) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Gestione Libri</title>
     <style>
+            body {
+        background-image: url('https://www.potterandmore.com/images/mondo_magico/luoghi/hogwarts/biblioteca.jpg');
+        background-size: cover; /* per coprire l'intera pagina con l'immagine */
+        background-repeat: no-repeat; /* per evitare che l'immagine si ripeta */
+    }
         #addBookForm {
             display: none; /* Nascondi il form inizialmente */
         }
     </style>
+
 </head>
 
 <body>
